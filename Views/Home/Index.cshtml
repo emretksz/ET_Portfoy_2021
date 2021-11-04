@@ -1,0 +1,334 @@
+﻿@model ET_MyBlog_2021_V2.Models.ViewModel.IndexViewModel
+@{
+    ViewBag.Title = "Ana Sayfa";
+}
+
+@section SliderFirst{
+    @Html.Partial("_SlidersFirst", Model.Sliders.ToList())
+
+}
+<!-- Section Intro Start -->
+
+
+@*<div class="container" style="margin-top:60px">*@
+    <section class="section latest-blog bg-2">
+        <div class="container">
+            <div class="row text-center justify-content-center mb-3 ">
+                <div class="col-xl-4 col-lg-5">
+                    <h2 class="font-weight-bold" style="color:white">Çalışma Planım</h2>
+                    <p class="text-muted h4" style="color:white">Sunulan Hizmetlerde En Önemli Noktalar:</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="timeline-steps aos-init aos-animate " data-aos="fade-up">
+                        @foreach (var item in Model.WorkStyles)
+                        {
+
+                            <div class="timeline-step">
+                                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="@item.Title" data-original-title="@item.RegisterDate">
+                                    <div class="inner-circle"></div>
+                                    <p class="h4 mt-3 mb-1" style="color:white">@item.Title</p>
+                                    <p class="h4 text-muted mb-0 mb-lg-0">@item.Description</p>
+                                </div>
+                            </div>
+
+                        }
+                        @*<div class="timeline-step mb-0">
+                                <div class="timeline-content" data-toggle="popover" data-trigger="hover" data-placement="top" title="" data-content="And here's some amazing content. It's very engaging. Right?" data-original-title="2020">
+                                    <div class="inner-circle"></div>
+                                    <p class="h6 mt-3 mb-1">2020</p>
+                                    <p class="h6 text-muted mb-0 mb-lg-0">In Fortune 500</p>
+                                </div>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+        <section class="section about position-relative" style="margin:60px">
+            <div class="bg-about"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-6 offset-md-0">
+                        <div class="about-item ">
+                            <span class="h6 text-color">Ben Kimim?</span>
+                            <h2 class="mt-3 mb-4 position-relative content-title">Değişen Dünyaya Ayak Uydurmaya çalışan biri</h2>
+                            <div class="about-content">
+                                <h4 class="mb-3 position-relative">İşte Sevdiğim Dünya</h4>
+                                <p class="mb-5">Yazılım Uzmanlığı eğitimi alarak yazılım sektörüne giriş yapmış oldum. Sektörde yeni olan biri olarak öğrenmek isteyen ve gelişmeye açık biriyim.<br />
+                                    Becerilerim web sitemde görebilirsiniz.<br />
+                                   <i> "Dünya değişiyor bu değişime ayak uydurmaya çalışıyorum." </i>
+                                </p>
+
+                                <a href="#" class="btn btn-main btn-round-full">Hadi Başlayalım</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Section Intro END -->
+        <!-- Section About Start -->
+        @*<section class="section about position-relative">
+                <div class="bg-about"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 offset-lg-6 offset-md-0">
+                            <div class="about-item ">
+                                <span class="h6 text-color">What we are</span>
+                                <h2 class="mt-3 mb-4 position-relative content-title">We are dynamic team of creative people</h2>
+                                <div class="about-content">
+                                    <h4 class="mb-3 position-relative">We are Perfect Solution</h4>
+                                    <p class="mb-5">We provide consulting services in the area of IFRS and management reporting, helping companies to reach their highest level. We optimize business processes, making them easier.</p>
+
+                                    <a href="#" class="btn btn-main btn-round-full">Get started</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>*@
+
+        <!-- Section About End -->
+        <!-- section Counter Start -->
+        @*<section class="section counter">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter-item text-center mb-5 mb-lg-0">
+                                <h3 class="mb-0"><span class="counter-stat font-weight-bold">1730</span> +</h3>
+                                <p class="text-muted">Project Done</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter-item text-center mb-5 mb-lg-0">
+                                <h3 class="mb-0"><span class="counter-stat font-weight-bold">125 </span>M </h3>
+                                <p class="text-muted">User Worldwide</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter-item text-center mb-5 mb-lg-0">
+                                <h3 class="mb-0"><span class="counter-stat font-weight-bold">39</span></h3>
+                                <p class="text-muted">Availble Country</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="counter-item text-center">
+                                <h3 class="mb-0"><span class="counter-stat font-weight-bold">14</span></h3>
+                                <p class="text-muted">Award Winner </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>*@
+        <!-- section Counter End  -->
+        <!--  Section Services Start -->
+        <!--<section class="section service border-top">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 text-center">
+                        <div class="section-title">
+                            <span class="h6 text-color">Hizmetlerim</span>-->
+        @*<h2 class="mt-3 content-title ">We provide a wide range of creative services </h2>*@
+        <!--</div>
+                    </div>
+                </div>
+
+                <div class="row ">
+
+
+
+
+                </div>
+            </div>
+        </section>-->
+
+
+
+        <div class="container py-5">
+            <div class="row text-center text-white">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-4" style="font-family:'Times New Roman'">Hizmetlerim</h1>
+                    <hr />
+                    <br />
+
+                    @*<p class=bg-primary-dark>Şu anda hizmet verdiğim alanlar</p>*@
+                </div>
+            </div>
+        </div><!-- End -->
+
+
+        <div class="container">
+            <div class="row text-center">
+
+                <!-- Team item -->@foreach (var item in Model.Services)
+                {
+                    <div class="col-xl-3 col-sm-6 mb-5">
+                        <div class="bg-white rounded shadow-sm py-5 px-4">
+                            <img src="@item.ImageURL" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                            <h5 class="mb-0">@item.ServiceTitle</h5><span class="small text-uppercase text-muted">@item.Description</span>
+                            <ul class="social mb-0 list-inline mt-3">
+                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div><!-- End -->
+
+                }
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--  Section Cta End-->
+        <!-- Section Testimonial Start -->
+        <!-- REFERANS BÖLÜMÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ-->
+        <section class="section testimonial">
+            @*<div class="container">
+                    <div class="row">
+                        <div class="col-lg-7 ">
+                            <div class="section-title">
+                                <span class="h6 text-color">Clients testimonial</span>
+                                <h2 class="mt-3 content-title">Check what's our clients say about us</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+
+            @*<div class="container">
+                    <div class="row testimonial-wrap">
+                        <div class="testimonial-item position-relative">
+                            <i class="ti-quote-left text-color"></i>
+
+                            <div class="testimonial-item-content">
+                                <p class="testimonial-text">Quam maiores perspiciatis temporibus odio reiciendis error alias debitis atque consequuntur natus iusto recusandae numquam corrupti facilis blanditiis.</p>
+
+                                <div class="testimonial-author">
+                                    <h5 class="mb-0 text-capitalize">Thomas Johnson</h5>
+                                    <p>Excutive Director,themefisher</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item position-relative">
+                            <i class="ti-quote-left text-color"></i>
+
+                            <div class="testimonial-item-content">
+                                <p class="testimonial-text">Consectetur adipisicing elit. Quam maiores perspiciatis temporibus odio reiciendis error alias debitis atque consequuntur natus iusto recusandae .</p>
+
+                                <div class="testimonial-author">
+                                    <h5 class="mb-0 text-capitalize">Mickel hussy</h5>
+                                    <p>Excutive Director,themefisher</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item position-relative">
+                            <i class="ti-quote-left text-color"></i>
+
+                            <div class="testimonial-item-content">
+                                <p class="testimonial-text">Quam maiores perspiciatis temporibus odio reiciendis error alias debitis atque consequuntur natus iusto recusandae numquam corrupti.</p>
+
+                                <div class="testimonial-author">
+                                    <h5 class="mb-0 text-capitalize">James Watson</h5>
+                                    <p>Excutive Director,themefisher</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item position-relative">
+                            <i class="ti-quote-left text-color"></i>
+
+                            <div class="testimonial-item-content">
+                                <p class="testimonial-text">Consectetur adipisicing elit. Quam maiores perspiciatis temporibus odio reiciendis error alias debitis atque consequuntur natus iusto recusandae .</p>
+
+                                <div class="testimonial-author">
+                                    <h5 class="mb-0 text-capitalize">Mickel hussy</h5>
+                                    <p>Excutive Director,themefisher</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>*@
+        </section>
+        @*Section Testimonial End*@
+        <section class="section latest-blog bg-2">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 text-center">
+                        <div class="section-title">
+                            <span class="h6 text-color">Son Yazılar</span>
+                            <h2 class="mt-3 content-title text-white"></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    @foreach (var item in Model.Blogs.OrderByDescending((u => u.BlogId)).Take(3))
+                    {
+                        <div class="col-lg-4 col-md-6 mb-5">
+
+                            <div class="card bg-transparent border-0">
+                                <img src="~/Content/images/blog/1.jpg" alt="" class="img-fluid rounded">
+
+                                <div class="card-body mt-2">
+                                    <div class="blog-item-meta">
+                                        <a href="#" class="text-white-50">@item.BlogDetails.AuthorJob<span class="ml-2 mr-2">/</span></a>
+
+                                        <a href="#" class="text-white-50 ml-2"><i class="fa fa-user mr-2"></i>@item.BlogDetails.Author</a>
+                                    </div>
+
+                                    <h3 class="mt-3 mb-5 lh-36"><a href="#" class="text-white ">@item.Title</a></h3>
+
+                                    <a href="@Url.Action("BlogDetails","Home",new {id=item.BlogId })" class="btn btn-small btn-solid-border btn-round-full text-white">Yazıyı Oku</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+        </section>
+
+        @*<section class="mt-70 position-relative">
+                <div class="container">
+                    <div class="cta-block-2 bg-gray p-5 rounded border-1">
+                        <div class="row justify-content-center align-items-center ">
+                            <div class="col-lg-7">
+                                <span class="text-color">For Every type business</span>
+                                <h2 class="mt-2 mb-4 mb-lg-0">Entrust Your Project to Our Best Team of Professionals</h2>
+                            </div>
+                            <div class="col-lg-4">
+                                <a href="contact.html" class="btn btn-main btn-round-full float-lg-right ">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+

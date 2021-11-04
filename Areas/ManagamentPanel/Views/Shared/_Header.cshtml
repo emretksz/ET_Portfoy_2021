@@ -1,0 +1,55 @@
+﻿<header class="ttr-header">
+    <div class="ttr-header-wrapper">
+        <!--sidebar menu toggler start -->
+        <div class="ttr-toggle-sidebar ttr-material-button">
+            <i class="ti-close ttr-open-icon"></i>
+            <i class="ti-menu ttr-close-icon"></i>
+        </div>
+        <!--sidebar menu toggler end -->
+        <!--logo start -->
+        <div class="ttr-logo-box">
+        </div>
+        <!--logo end -->
+        <div class="ttr-header-menu">
+            <!-- header left menu start -->
+            <ul class="ttr-header-navigation">
+                <li>
+                    <a href="@Url.Action("Index","Admin")" class="ttr-material-button ttr-submenu-toggle">Anasayfa Dön</a>
+                </li>
+     
+            </ul>
+            <!-- header left menu end -->
+        </div>
+
+
+        <div class="ttr-header-right ttr-with-seperator">
+            <!-- header right menu start -->
+            <ul class="ttr-header-navigation">
+           
+                <li>
+                    <a href="#" class="ttr-material-button ttr-submenu-toggle" style="font-size:22px">❌</a>
+                    <div class="ttr-header-submenu">
+                        <ul>
+                            <li><a href=@Url.Action("Logout","Admin")>Çıkış Yap</a></li>
+                        </ul>
+                    </div>
+                </li>
+             
+            </ul>
+            <!-- header right menu end -->
+        </div>
+        <!--header search panel start -->
+        <div class="ttr-search-bar">
+            <form class="ttr-search-form">
+                <div class="ttr-search-input-wrapper">
+                    <input type="text" name="qq" placeholder="search something..." class="ttr-search-input">
+                    <button type="submit" name="search" class="ttr-search-submit"><i class="ti-arrow-right"></i></button>
+                </div>
+                <span class="ttr-search-close ttr-search-toggle">
+                    <i class="ti-close"></i>
+                </span>
+            </form>
+        </div>
+        <!--header search panel end -->
+    </div>
+</header>

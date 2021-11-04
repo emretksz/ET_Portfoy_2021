@@ -1,0 +1,134 @@
+﻿@model ET_MyBlog_2021_V2.Models.ViewModel.BlogsViewModel
+@{
+    ViewBag.Title = "Blogs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    bool gecerli = false;
+}
+
+@section Sliders2{
+    @Html.Partial("_SlidersTwo", true)
+
+}
+<style>
+
+    .q {
+    }
+
+    .x {
+    }
+</style>
+<section class="section blog-wrap bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row" id="Blog_list">
+
+
+                    @Html.Partial("_BlogList", Model.Blogs.ToList())
+                    <!--Bloglarımı basıyorum-->
+
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="sidebar-wrap">
+                    <!--Arama Kısmı-->
+                    <div class="sidebar-widget search card p-4 mb-3 border-0">
+                        <input type="text" class="form-control" placeholder="search">
+                        <a href="#" class="btn btn-mian btn-small d-block mt-2">Arama</a>
+                    </div>
+
+
+                    <!---Yaazarın olacağı bölüm-->
+                    <div class="sidebar-widget card border-0 mb-3">
+                        @foreach (var item in Model.Blogs.OrderByDescending(u => u.IsActive == true).Take(2))
+                        {
+                            if (gecerli == true)
+                            {
+
+                                <img src="@item.BlogDetails.AuthorImage" alt="" class="img-fluid">
+                                <div class="card-body p-4 text-center">
+                                    <h5 class="mb-0 mt-4">@item.BlogDetails.Author</h5>
+                                    <p>@item.BlogDetails.AuthorJob</p>
+                                    @*<p>@item.BlogDetails.</p>*@ <!--YAZARIN AÇIKLAMASI-->
+                                    <!--sosyal medya hesapları-->
+                                    @*<ul class="list-inline author-socials">
+                                            <li class="list-inline-item mr-3">
+                                                <a href="#"><i class="fab fa-facebook-f text-muted"></i></a>
+                                            </li>
+                                            <li class="list-inline-item mr-3">
+                                                <a href="#"><i class="fab fa-twitter text-muted"></i></a>
+                                            </li>
+                                            <li class="list-inline-item mr-3">
+                                                <a href="#"><i class="fab fa-linkedin-in text-muted"></i></a>
+                                            </li>
+                                            <li class="list-inline-item mr-3">
+                                                <a href="#"><i class="fab fa-pinterest text-muted"></i></a>
+                                            </li>
+                                            <li class="list-inline-item mr-3">
+                                                <a href="#"><i class="fab fa-behance text-muted"></i></a>
+                                            </li>
+                                        </ul>*@
+                                </div>
+
+                            }
+                            gecerli = true;
+                        }
+                    </div>
+
+                    <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
+                        <h5>Son Yazılar</h5>
+                        @foreach (var item in Model.Blogs.OrderByDescending((u => u.BlogId)).Take(3))
+                        {
+
+                            <div class="media border-bottom py-3">
+                                <a href="#"><img class="mr-4" src="@item.ImageURL" width="87" height="72" alt=""></a>
+                                <div class="media-body">
+                                    <h6 class="my-2"><a href="#">@item.Title</a></h6>
+                                    <span class="text-sm text-muted">@item.RegisterDate</span>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+
+                    <div class="sidebar-widget bg-white rounded tags p-4 mb-3">
+                        <h5 class="mb-4">Tags</h5>
+                        @foreach (var item in Model.Tags)
+                        {
+
+
+                            <a id="@item.TagId" class="q" href="#">@item.TagName</a>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-lg-8">
+                <nav class="navigation pagination py-2 d-inline-block">
+                    <div class="nav-links">
+                        <a class="prev page-numbers" href="@Url.Action("Blog","Home",new {pageNumber=1})"> Geri</a>
+                        <span aria-current="page" class="@(ViewBag.Page==1?"page-numbers current ":"")">1</span>
+                        <span aria-current="page" class="@(ViewBag.Page==2?"page-numbers current ":"")">2</span>
+                        <a class="prev page-numbers" href="@Url.Action("Blog","Home",new {pageNumber=2})">Next</a>
+                        @*<a class="@(ViewBag.Page==2?" page-numbers current":"") " href="@Url.Action("Blog","Home",new {pageNumber=2})">2</a>*@
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+@section Scripts{
+
+
+    <script src="~/Areas/ManagamentPanel/Scripts/js/JqueryBlog.js"></script>
+
+}
+

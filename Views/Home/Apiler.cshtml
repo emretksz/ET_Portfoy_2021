@@ -1,0 +1,74 @@
+﻿@*@model List< ET_MyBlog_2021_V2.Models.ApiModel.Weather>*@
+@model ET_MyBlog_2021_V2.Models.ViewModel.ApiViewModel
+@{
+    ViewBag.Title = "Gündem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="section service border-top">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 text-center">
+                <div class="section-title">
+                    <span class="h5 text-color">BİNANCE BORSASI</span>
+                    <hr />
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+
+            <!--Sadece binanceborsasını istediğim için filtre yaptım ve 5 tane almak istediğimi belirttim-->
+            @foreach (var para in Model.markets.Where(u => u.exchange_id == "BINANCE").Take(5))
+            {
+
+                if (para.change_24h.ToString().Contains("-"))
+                {
+
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="service-item mb-5">
+                            @*<i class="ti-desktop">>@para.symbol</i>*@
+
+                            <h4 class="mb-3">@para.symbol</h4>
+                            <p>Kur: @para.price.Substring(0, 9)</p>
+                            <span>24 Saatlik Değişimi :</span><h4>@para.change_24h.Substring(0, 7)<span style="color:red; font-size:30px"> &#8600;</span></h4>
+                            <h6> - @para.exchange_id</h6>
+                        </div>
+                    </div>
+
+                }
+                else
+
+                {
+
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="service-item mb-5">
+                            @*<i class="ti-desktop">>@para.symbol</i>*@
+
+                            <h4 class="mb-3">@para.symbol </h4>
+                            <p> Kur: @para.price.Substring(0, 9)</p>
+                            <span>24 Saatlik Değişimi :</span><h4>@para.change_24h.Substring(0, 7) <span style="color:green; font-size:30px">&#8599;</span></h4>
+                            <h6> - @para.exchange_id</h6>
+                        </div>
+                    </div>
+
+                }
+            }
+
+        </div>
+    </div>
+</section>
+
+
+<section class="section latest-blog bg-counter">
+    <div class="container">
+        <div class="row text-center justify-content-center mb-1 ">
+
+        </div>
+
+
+    </div>
+</section>
+
+
+

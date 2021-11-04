@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="~/Areas/ManagamentPanel/Content/css/Login.css" rel="stylesheet" />
+    <link href="~/Areas/ManagamentPanel/Content/css/Boostrap4.css" rel="stylesheet" />
+    <link href="~/Areas/ManagamentPanel/Content/css/Icons.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+
+                    @using (Html.BeginForm("Login", "Admin", FormMethod.Post, new { @class = "box" }))
+                    {
+
+                        <h1>Giriş Yap</h1>
+                        <p class="text-muted"> Email Adresinizi ve Şifrenizi Giriniz!</p>
+
+                        if (ViewBag.Error != null)
+                        {
+                            <p class="alert-danger">@ViewBag.Error</p>
+                        }
+                        <input type="text" name="Email" placeholder="Email">
+                        <input type="password" name="Password" placeholder="Şifre">
+                        <a class="forgot text-muted" href="#">Şifremi Unuttum</a>
+                        <input type="submit" name="" value="Login" href="#">
+                        <div class="col-md-12">
+                            @*<ul class="social-network social-circle">
+
+                                <li><a href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#" class="icoGoogle" title="Google +"><i class="fab fa-google-plus"></i></a></li>
+                            </ul>*@
+                        </div>
+                        @*<a href="@Url.Action("Index","Home",new {areas="Home" })">Ana Sayfaya Dön</a>*@
+                        @*@Html.ActionLink("Ana sayfaya Dön", "Index", "Home", new { area = "Home" }, null)*@
+                        @*<a href="@Url.Action("Git","Admin")">Ana Sayfaya Dön</a>*@
+                        <a href="@Url.Action("Index","Home", new { area="" })">Ana Sayfaya Dön</a>
+                            }
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+

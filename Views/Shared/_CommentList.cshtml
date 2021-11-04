@@ -1,0 +1,101 @@
+﻿@model List<ET_MyBlog_2021_V2.Models.Comments>
+<style>
+    .yorumId {
+    }
+</style>
+
+@foreach (var item in Model.Where(c => c.IsReply == 0))
+{
+
+    <li class="mb-5">
+        <div class="comment-area-box">
+            
+            <img alt="" src="https://www.prchecker.info/free-icons/128x128/asp_net_128_px.png" width="30px" height="30px" class="img-fluid float-left mr-3 mt-5">
+            <h5 class="yorumId mb-1" id="@item.CommentId" style="color:gray"> @item.GuestName</h5>
+
+            @*<h5 class="mb-1">@item.GuestName</h5>*@
+
+            <div class="comment-meta mt-4 mt-lg-0 mt-md-0 float-lg-right float-md-right">
+                <a class="icofont-reply mr-2 text-muted">Reply |</a>
+                <span class="date-comm">@item.RegisterDate</span>
+            </div>
+
+            <div class="comment-content mt-3">
+                <p><b>@item.Comment</b>  </p>
+            </div>
+        </div>
+    </li>
+
+    <li>
+        @foreach (var yorum in Model.Where(u => u.IsReply == item.CommentId))
+        {
+      
+        <i class="mr-5" style="margin-left:40px"> <b >Yanıtlar: </b></i>
+        <div class="comment-area-box" style="background-color: aliceblue;margin-left:40px ">
+            <img alt="" src="~/Content/asp-file.png" width="25px" height="25px" class="mt-2 img-fluid float-left mr-3">
+
+            <hr />
+           
+            <h5 class="yorumId mb-1 " style="color:gray" id="@yorum.CommentId">
+                  @yorum.GuestName
+            </h5>
+            @*<h5 class="mb-1">@item.GuestName</h5>*@
+
+
+            <div class="comment-meta  mr-5 mt-4 mt-lg-0 mt-md-0 float-lg-right float-md-right">
+                <a class="icofont-reply mr-2 text-muted">Reply |</a>
+
+                <span class="date-comm">@yorum.RegisterDate</span>
+            </div>
+
+            <div class="comment-content mt-3">
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-left:25px">@yorum.Comment </p>
+            </div>
+        </div>
+        }
+        </li>
+
+    <!--<li class="mb-5">-->
+
+        @*<div class="comment-area-box">
+
+                <img alt="" src="images/blog/test1.jpg" class="img-fluid float-left mr-3 mt-2">
+                <h5 class="yorumId mb-1" id="@item.CommentId">@item.GuestName</h5>
+
+                <div class="comment-meta mt-4 mt-lg-0 mt-md-0 float-lg-right float-md-right">
+                    <a class="icofont-reply mr-2 text-muted">
+                        Cevapla|
+                    </a>
+                </div>
+
+                <span class="date-comm">@item.RegisterDate</span>
+                <div class="comment-content mt-3">
+                    <p>@item.Comment </p>
+                </div>
+
+            </div>*@
+        <!--<hr />
+      
+            <div class="comment-area-box" style="background-color:antiquewhite">
+                <img alt="" src="images/blog/test2.jpg" class="mt-2 img-fluid float-left mr-3">
+
+                <h5 class="mb-1 yorumId" id="</h5>
+                <div class="comment-meta mt-4 mt-lg-0 mt-md-0 float-lg-right float-md-right">
+                    <a href="#">
+                        <i class="icofont-reply mr-2 text-muted">
+                        </i>Cevapla
+                    </a>
+                    <span class="date-comm"></span>
+                </div>
+
+                <div class="comment-content mt-3">
+                    <p></p>
+                </div>
+            </div>
+        }
+
+    </li>-->
+
+}
+
+

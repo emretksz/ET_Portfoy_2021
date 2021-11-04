@@ -1,0 +1,199 @@
+﻿@model ET_MyBlog_2021_V2.Models.Blogs
+@{
+    ViewBag.Title = "BlogDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Sliders2{
+    @Html.Partial("_SlidersTwo", true)
+
+}
+<style>
+    .comments-count{
+
+    }
+</style>
+<section class="section blog-wrap bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-12 mb-5">
+
+
+                        <div class="single-blog-item">
+                            <img src="@Model.ImageURL"  alt="" class="img-fluid rounded">
+
+                            <div class="blog-item-content bg-white p-5">
+                                <div class="blog-item-meta bg-gray py-1 px-2">
+                                    @foreach (var item in Model.Tags)
+                                    {
+                                        <span class="text-muted text-capitalize mr-3"><i class="ti-pencil-alt mr-2"></i>@item.TagName</span>
+                                    }
+                                    <span class="text-muted text-capitalize mr-3"><i class="ti-comment mr-2"></i></span>
+                                    <span class="text-black text-capitalize mr-3"><i class="ti-time mr-1"></i> @Model.RegisterDate</span>
+                                </div>
+
+                                <h2 class="mt-3 mb-4"><a href="blog-single.html">@Model.Title</a></h2>
+
+
+                                <p >@Html.Raw(Model.BlogDetails.Description)</p>
+
+
+                                <div class="tag-option mt-5 clearfix">
+                                    <ul class="float-left list-inline">
+                                        <li>Etiketler</li>
+                                        @foreach (var item in Model.Tags)
+                                        {
+                                            <li class="list-inline-item"><a href="#" rel="tag">@item.TagName</a></li>
+
+                                        }
+                                    </ul>
+                                    @*<ul class="float-right list-inline"><!--Sosyal Medya-->
+                            <li class="list-inline-item"> Share: </li>
+                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                            <li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+                        </ul>*@
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    @*<div class="col-lg-12 mb-5">          ÖNCEKİ VE SONRAKİ POSTLAR
+            <div class="posts-nav bg-white p-5 d-lg-flex d-md-flex justify-content-between ">
+                <a class="post-prev align-items-center" href="#">
+                    <div class="posts-prev-item mb-4 mb-lg-0">
+                        <span class="nav-posts-desc text-color">- Previous Post</span>
+                        <h6 class="nav-posts-title mt-1">
+                            Donec consectetuer ligula <br>vulputate sem tristique.
+                        </h6>
+                    </div>
+                </a>
+                <div class="border"></div>
+                <a class="posts-next" href="#">
+                    <div class="posts-next-item pt-4 pt-lg-0">
+                        <span class="nav-posts-desc text-lg-right text-md-right text-color d-block">- Next Post</span>
+                        <h6 class="nav-posts-title mt-1">
+                            Ut aliquam sollicitudin leo.
+                        </h6>
+                    </div>
+                </a>
+            </div>
+        </div>*@
+
+                    <!--YORUM BÖLÜMÜ-->
+
+                <div class="col-lg-12 mb-5">
+                    <div class="comment-area card border-0 p-5">
+                        <h4 class="mb-4 comments-count"><i style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Yorum Sayısı: </i>@Model.Comments.Count()</h4>
+                        <hr />
+                        <ul class="comment-tree list-unstyled"id="comment-refresh">
+
+                                @Html.Partial("_CommentList", Model.Comments.ToList())
+      
+                        </ul>
+                    </div>
+                </div><!--YORUM FORM BÖLÜMÜ-->
+                                <div class="col-lg-12">
+                                    <form class="contact-form bg-white rounded p-5" id="comment-form">
+                                        <!--Bu satır benim yorumların id'lerini ve name'lerini almama yarıyor.-->
+                                        <b>Yorum Yap: </b>
+                                        <a id="Comment-guest-id" hidden></a>
+                                        <h3 id="Comment-guest-name" hidden></h3>
+                                        <a id="Comments-Leave" hidden>Vazgeç</a>
+                                        <!---->
+                                        <h4 class="mb-4">Yorum Yaz</h4>
+                                        @Html.Hidden("BlogId", Model.BlogId)
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input class="form-control" type="text" name="name" id="name" placeholder="Name:">
+                                                </div>
+                                            </div>
+                                            @*<div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="mail" id="mail" placeholder="Email:">
+                                    </div>
+                                </div>*@
+                                        </div>
+
+                                        <textarea class="form-control mb-3" name="comment" id="comment" cols="30" rows="5" placeholder="Yorum :"></textarea>
+
+                                        <input class="btn btn-main btn-round-full" type="submit" name="submit-contact" id="submit_contact" value="Submit Message">
+                                    </form>
+                                </div>
+
+                                <!--YORUM BÖLÜMÜ-->
+                                <!--YORUM BÖLÜMÜ-->
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="sidebar-wrap">
+
+                            <div class="sidebar-widget card border-0 mb-3">
+                                <img src="@Model.BlogDetails.AuthorImage" alt="" class="img-fluid">
+                                <div class="card-body p-4 text-center">
+                                    <h5 class="mb-0 mt-4">@Model.BlogDetails.Author</h5>
+                                    <p>@Model.BlogDetails.AuthorJob</p>
+
+
+                                    @*<ul class="list-inline author-socials">
+                            <li class="list-inline-item mr-3">
+                                <a href="#"><i class="fab fa-facebook-f text-muted"></i></a>
+                            </li>
+                            <li class="list-inline-item mr-3">
+                                <a href="#"><i class="fab fa-twitter text-muted"></i></a>
+                            </li>
+                            <li class="list-inline-item mr-3">
+                                <a href="#"><i class="fab fa-linkedin-in text-muted"></i></a>
+                            </li>
+                            <li class="list-inline-item mr-3">
+                                <a href="#"><i class="fab fa-pinterest text-muted"></i></a>
+                            </li>
+                            <li class="list-inline-item mr-3">
+                                <a href="#"><i class="fab fa-behance text-muted"></i></a>
+                            </li>
+                        </ul>*@
+                                </div>
+                            </div>
+
+                            <div class="sidebar-widget latest-post card border-0 p-4 mb-3">
+                                <h5>son Yazılar</h5>
+                              
+
+                                <div class="media border-bottom py-3">
+                                    <a href="#"><img class="mr-4" src="@Model.ImageURL" width="87" height="72" alt=""></a>
+                                    <div class="media-body">
+                                        <h6 class="my-2"><a href="#">@Model.Title</a></h6>
+                                        <span class="text-sm text-muted">@Model.RegisterDate</span>
+                                    </div>
+                                </div>
+
+                             
+                            </div>
+
+                            <div class="sidebar-widget bg-white rounded tags p-4 mb-3">
+                                <h5 class="mb-4">Tags</h5>
+                                @foreach (var item in Model.Tags)
+                                {
+
+                                    <a href="#">@item.TagName</a>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+</section>
+
+@section Scripts{
+
+
+    <script src="~/Areas/ManagamentPanel/Scripts/js/JqueryBlog.js"></script>
+  
+    }

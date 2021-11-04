@@ -1,0 +1,40 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+    <script src="https://unpkg.com/embeddable-nfts/dist/nft-card.min.js"></script>
+
+
+    @Html.Partial("_Head")
+
+</head>
+
+<body>
+
+
+    <!-- Header Start -->
+
+   @Html.Partial("_Header")
+
+    <!-- Header Close -->
+
+    <div class="main-wrapper ">
+        <!-- Slider Start -->
+        @RenderSection("SliderFirst",false) 
+        @RenderSection("Sliders2", false) 
+        <!-- Section Intro Start -->
+
+     @RenderBody()
+
+        <!-- footer Start -->
+        @Html.Partial("_Footer")
+
+    </div>
+@Html.Partial("_Scripts")
+
+
+
+    @RenderSection("Scripts",false)
+
+</body>
+</html>

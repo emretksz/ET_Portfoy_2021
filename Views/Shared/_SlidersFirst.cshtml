@@ -1,0 +1,21 @@
+﻿ @model List<ET_MyBlog_2021_V2.Models.Sliders>
+
+
+<section class="slider">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+
+            <div class="col-lg-9 col-md-10">
+                <div class="block">
+                    <span class="d-block mb-3  text-capitalize" style="color:red">@item.Title</span>
+                    <h1 class="animated fadeInUp mb-5" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">@item.Description</h1>
+                    <a href="#" target="_blank" class="btn btn-main animated fadeInUp btn-round-full">Başlayalım<i class="btn-icon fa fa-angle-right ml-2"></i></a>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+

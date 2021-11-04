@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="89e583045e0b421ab5345c96653a5dd9" Name="Diagram1">
+        <EntityTypeShape EntityType="ET_MyBlog_2021_V2_DbModel.Abouts" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ET_MyBlog_2021_V2_DbModel.BlogDetails" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ET_MyBlog_2021_V2_DbModel.Portfolios" Width="1.5" PointX="5.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ET_MyBlog_2021_V2_DbModel.Roles" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ET_MyBlog_2021_V2_DbModel.Services" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ET_MyBlog_2021_V2_DbModel.Sliders" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ET_MyBlog_2021_V2_DbModel.Tags" Width="1.5" PointX="8" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ET_MyBlog_2021_V2_DbModel.Users" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ET_MyBlog_2021_V2_DbModel.WorkStyles" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="ET_MyBlog_2021_V2_DbModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="ET_MyBlog_2021_V2_DbModel.TagToPortfolios" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ET_MyBlog_2021_V2_DbModel.Blogs" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="ET_MyBlog_2021_V2_DbModel.Comments" Width="1.5" PointX="5.25" PointY="12" />
+        <AssociationConnector Association="ET_MyBlog_2021_V2_DbModel.FK_BlogDetails_Blogs" />
+        <AssociationConnector Association="ET_MyBlog_2021_V2_DbModel.FK_Comments_Blogs" />
+        <AssociationConnector Association="ET_MyBlog_2021_V2_DbModel.TagToBlogs" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

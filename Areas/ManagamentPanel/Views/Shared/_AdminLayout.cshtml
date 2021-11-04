@@ -1,0 +1,105 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from educhamp.themetrades.com/demo/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:08:15 GMT -->
+<head>
+
+    <!-- META ============================================= -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="" />
+
+    <!-- DESCRIPTION -->
+    <meta name="description" content="Emre Toksözi" />
+
+    <!-- OG -->
+    <meta property="og:title" content="Emre Toksöz" />
+    <meta property="og:description" content="Emre Toksözi" />
+    <meta property="og:image" content="" />
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- FAVICONS ICON ============================================= -->
+    <link rel="icon" href="../error-404.html" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/Areas/ManagamentPanel/Content/images/favicon.png" />
+
+    <!-- PAGE TITLE HERE ============================================= -->
+    <title>Emre Toksöz</title>
+
+    <!-- MOBILE SPECIFIC ============================================= -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if lt IE 9]>
+    <script src="~/Areas/ManagamentPanel/Scripts/js/html5shiv.min.js"></script>
+    <script src="~/Areas/ManagamentPanel/Scripts/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- All PLUGINS CSS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="~/Areas/ManagamentPanel/Content/css/assets.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/ManagamentPanel/Content/vendors/calendar/fullcalendar.css">
+
+    <!-- TYPOGRAPHY ============================================= -->
+    <link rel="stylesheet" type="text/css" href="~/Areas/ManagamentPanel/Content/css/typography.css">
+
+    <!-- SHORTCODES ============================================= -->
+    <link rel="stylesheet" type="text/css" href="~/Areas/ManagamentPanel/Content/css/shortcodes/shortcodes.css">
+
+    <!-- STYLESHEETS ============================================= -->
+    <link rel="stylesheet" type="text/css" href="~/Areas/ManagamentPanel/Content/css/style.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/ManagamentPanel/Content/css/dashboard.css">
+    <link class="skin" rel="stylesheet" type="text/css" href="~/Areas/ManagamentPanel/Content/css/color/color-1.css">
+
+    <script src="~/Areas/ManagamentPanel/Content/ckeditor/ckeditor.js"></script>
+
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="~/Content/plugins/jquery/jquery-3.6.0.min.js"></script>
+
+</head>
+<body class="ttr-opened-sidebar ttr-pinned-sidebar">
+
+    <!-- header start -->
+    @Html.Partial("_Header")
+    <!-- header end -->
+    <!-- Left sidebar menu start -->
+    @Html.Partial("_SideBar")
+    <!-- Left sidebar menu end -->
+    <!--Main container start -->
+    <main class="ttr-wrapper">
+        @RenderBody()
+    </main>
+
+
+    <!-- External JavaScripts -->
+    <script src="~/Areas/ManagamentPanel/Scripts/js/jquery.min.js"></script>
+    <script src="~/Areas/ManagamentPanel/Content/vendors/bootstrap/js/popper.min.js"></script>
+    <script src="~/Areas/ManagamentPanel/Content/vendors/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Areas/ManagamentPanel/Content/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+    <script src="~/Areas/ManagamentPanel/Content/vendors/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script>
+    <script src="~/Areas/ManagamentPanel/Content/vendors/magnific-popup/magnific-popup.js"></script>
+    <script src="~/Areas/ManagamentPanel/Content/vendors/counter/waypoints-min.js"></script>
+    <script src="~/Areas/ManagamentPanel/Content/vendors/counter/counterup.min.js"></script>
+    <script src="~/Areas/ManagamentPanel/Content/vendors/imagesloaded/imagesloaded.js"></script>
+    <script src="~/Areas/ManagamentPanel/Content/vendors/masonry/masonry.js"></script>
+    <script src="~/Areas/ManagamentPanel/Content/vendors/masonry/filter.js"></script>
+    <script src="~/Areas/ManagamentPanel/Content/vendors/owl-carousel/owl.carousel.js"></script>
+    <script src='~/Areas/ManagamentPanel/Content/vendors/scroll/scrollbar.min.js'></script>
+    <script src="~/Areas/ManagamentPanel/Scripts/js/functions.js"></script>
+    <script src="~/Areas/ManagamentPanel/Content/vendors/chart/chart.min.js"></script>
+    <script src="~/Areas/ManagamentPanel/Scripts/js/admin.js"></script>
+    <script src='~/Areas/ManagamentPanel/Content/vendors/calendar/moment.min.js'></script>
+    <script src='~/Areas/ManagamentPanel/Content/vendors/calendar/fullcalendar.js'></script>
+
+    <script>
+        CKEDITOR.replace('editor1', { enterMode:CKEDITOR.ENTER_BR,entities:false,basicEntities:false});
+
+    </script>
+
+
+    @RenderSection("Scripts",false) 
+
+</body>
+
+<!-- Mirrored from educhamp.themetrades.com/demo/admin/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Feb 2019 13:09:05 GMT -->
+</html>

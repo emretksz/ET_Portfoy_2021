@@ -1,0 +1,74 @@
+﻿@model ET_MyBlog_2021_V2.Models.ViewModel.PortfolioViewModel
+@{
+    ViewBag.Title = "Portföy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+
+
+@section Sliders2{
+    @Html.Partial("_SlidersTwo", true)
+
+}
+
+
+<section class="section portfolio pb-0">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 text-center">
+                <div class="section-title">
+                    <span class="h2 text-color">Hizmetlerim</span>
+                    <hr />
+                    <h4 class="mt-2 content-title " style="font-size:large">Yaptığım tüm projeleri bu bölümde tanıtıyorum. <br />Github, Freelance</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row portfolio-gallery">
+            @foreach (var item in Model.Portfolios)
+            {
+
+            <div class="col-lg-4 col-md-6">
+                <div class="portflio-item position-relative mb-4 ">
+                    <a href="@item.Description" style="color:red" >
+                        <img src="@item.ImageURL" alt="" class="img-fluid w-100" >
+
+                        <i class="ti-plus overlay-item"></i>
+                        <div class="portfolio-item-content">
+                            <h3 class="mb-0 text-white">@item.ProjectName</h3>
+                            <span>@item.Description</span><br />
+                            @foreach (var etiket in item.Tags)
+                            {
+                                <span class="text-white-50">
+                                    <a href="#" style="color:antiquewhite">
+                                        @etiket.TagName
+                                    </a>
+                                </span>
+
+
+                            }
+
+
+
+                        </div>
+                    </a>
+             
+                </div>
+            </div>
+            }
+
+        </div>
+    </div>
+</section>
+<section class="section latest-blog bg-counter">
+    <div class="container">
+        <div class="row text-center justify-content-center mb-1 ">
+
+        </div>
+
+
+    </div>
+</section>
